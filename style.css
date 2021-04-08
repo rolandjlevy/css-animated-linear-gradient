@@ -1,3 +1,10 @@
+:root {
+  --col-1: hsl(210, 100%, 70%);
+  --col-2: hsl(330, 100%, 70%);
+  --col-3: hsl(54, 100%, 70%);
+  --angle: 90deg;
+}
+
 body {
   background: black;
   box-sizing: border-box;
@@ -16,22 +23,25 @@ body {
   top: 25vmin;
   width: 50vmin;
   height: 50vmin;
-  background-image: linear-gradient(90deg, 
-  dodgerblue, 
-  hotpink, 
-  yellow, 
-  dodgerblue
+  background-image: linear-gradient(var(--angle), 
+    var(--col-1), 
+    var(--col-2), 
+    var(--col-3), 
+    var(--col-1)
   );
   background-size: 300%;
   animation: animate 12s linear infinite;
 }
 
 .box-glow {
-  transition: filter 0.25s ease;
+  transition: all 0.25s ease;
+  filter: blur(0);
+  transform: scale(1);
 }
 
 .box-glow:hover {
-  filter: blur(20px);
+  filter: blur(15px);
+  transform: scale(1.05);
 }
 
 @keyframes animate {
